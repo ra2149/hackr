@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacked Successfally</title>
     <style>
-        /* تنسيق الصفحة ليكون الفيديو بحجم الشاشة بالكامل /
+ 
         body {
             margin: 0;
             padding: 0;
@@ -23,22 +23,22 @@
     </style>
 </head>
 <body>
-    <!-- عنصر الفيديو مع خصائص التشغيل التلقائي والشاشة الكاملة -->
+   
     <video id="hack" autoplay playsinline>
         <!-- مصدر الفيديو -->
         <source autoplay src="hack.mp4" type="video/mp4">
-        <!-- رسالة تظهر إذا لم يدعم المتصفح الفيديو -->
-        متصفحك لا يدعم تشغيل الفيديو.
+       
+    
     </video>
 
     <script>
-        // وظيفة لتفعيل وضع الشاشة الكاملة للفيديو
+       
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("hack");
-            // تشغيل الفيديو تلقائيًا عند التحميل
+     
             video.play();
 
-            // طلب وضع الشاشة الكاملة
+     
             if (video.requestFullscreen) {
                 video.requestFullscreen();
             } else if (video.webkitRequestFullscreen) { // Safari
