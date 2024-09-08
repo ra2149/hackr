@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacked Successfally</title>
+    <title>مشغل الفيديو</title>
     <style>
- 
-        body {
+        /* جعل الفيديو يملأ الشاشة كاملة */
+        body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #000; 
-        
+            height: 100%;
+            width: 100%;
+        }
         video {
-            width: 880;
-            height:880;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* يملأ الفيديو الشاشة بالكامل مع الحفاظ على النسبة الجانبية */
         }
     </style>
 </head>
 <body>
-   
-    <video id="hack" autoplay muted playsinline>
-        <source autoplay src="hack.mp4" type="video/mp4">
-       
-    
+    <video controls autoplay>
+        <source src="hackr.mp4" type="video/mp4">
+        متصفحك لا يدعم عنصر الفيديو.
     </video>
-
 </body>
 </html>
