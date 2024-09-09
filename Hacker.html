@@ -5,47 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشغل الفيديو</title>
     <style>
-        /* ضبط إعدادات الصفحة لتكون متوافقة مع جميع المتصفحات */
+        /* تعيين حجم الفيديو المحدد */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* منع التمرير عند ملء الفيديو للشاشة بالكامل */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        /* تعيين فيديو ليملأ الشاشة بالكامل */
+        
         video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* الحفاظ على نسبة العرض والارتفاع دون تشويه */
+            width: 880px;
+            height: 1240px;
+            object-fit: cover; /* الحفاظ على نسبة العرض والارتفاع بدون تشويه */
         }
     </style>
 </head>
 <body>
-    <video id="myVideo" controls autoplay>
+    <video id="myVideo" autoplay muted>
         <source src="hack.mp4" type="video/mp4">
         متصفحك لا يدعم عنصر الفيديو.
     </video>
 
     <script>
+        // تشغيل الفيديو مع الصوت تلقائيًا
         const video = document.getElementById('myVideo');
-        
-        // ملء الشاشة تلقائيًا عند تشغيل الفيديو
-        video.addEventListener('play', () => {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) { // Firefox
-                video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { // IE/Edge
-                video.msRequestFullscreen();
-            }
-        });
+        video.volume = 1.0; // تعيين مستوى الصوت إلى أقصى حد
     </script>
 </body>
 </html>
