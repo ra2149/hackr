@@ -5,32 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشغل الفيديو</title>
     <style>
+        /* ضبط إعدادات الصفحة لتكون متوافقة مع جميع المتصفحات */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
+            overflow: hidden; /* منع التمرير عند ملء الفيديو للشاشة بالكامل */
         }
+
+        /* تعيين فيديو ليملأ الشاشة بالكامل */
         video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* الحفاظ على نسبة العرض والارتفاع دون تشويه */
         }
     </style>
 </head>
 <body>
-    <video id="myVideo"  autoplay>
+    <video id="myVideo" controls autoplay>
         <source src="hack.mp4" type="video/mp4">
-    
+        متصفحك لا يدعم عنصر الفيديو.
     </video>
+
     <script>
         const video = document.getElementById('myVideo');
-        video.addEventListener('dblclick', () => {
+        
+        // ملء الشاشة تلقائيًا عند تشغيل الفيديو
+        video.addEventListener('play', () => {
             if (video.requestFullscreen) {
                 video.requestFullscreen();
             } else if (video.mozRequestFullScreen) { // Firefox
                 video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari, and Opera
                 video.webkitRequestFullscreen();
             } else if (video.msRequestFullscreen) { // IE/Edge
                 video.msRequestFullscreen();
@@ -38,3 +48,4 @@
         });
     </script>
 </body>
+</html>
