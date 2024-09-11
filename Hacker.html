@@ -1,35 +1,30 @@
-<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Done :) </title>
-  
-</head>
-
- body {
+    <style>
+        body {
             margin: 0;
             padding: 0;
-            overflow: hidden; / إخفاء التمرير /
+            background-color: black;
+            overflow: hidden;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #000; / لون الخلفية أسود */
-        
-        video {
-            width: 100%;
-            height: 100%;
         }
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
 <body>
-    <video id="hack" autoplay muted>
+    <video autoplay loop muted>
         <source src="hack.mp4" type="video/mp4">
+        
     </video>
-
-    <script>
-        // تشغيل الفيديو مع الصوت تلقائيًا
-        const video = document.getElementById('myVideo');
-        video.volume = 1.0; // تعيين مستوى الصوت إلى أقصى حد
-    </script>
 </body>
 </html>
